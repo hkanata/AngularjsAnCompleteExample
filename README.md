@@ -1,7 +1,7 @@
 # AngularJs Example
 
 An example of an application using AngularJS.
-Below are listed the services used of the Framework.
+Below are listed the services used on Git App.
 
  - Route
  - Http Service
