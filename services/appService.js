@@ -32,8 +32,30 @@ app.service('statesService', function($http) {
 	}
 
 	this.getStatesHttp = function(callback) {
-		//$http.get('states.json').success(callback);
-		$http.get(urlStates).success(callback);
+		var config = {
+			headers : {
+				'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+			}
+		}
+		var data = $.param({
+			my_site: "opba.com.br"
+		});
+			
+		//$http.get(urlStates).success(callback);
+		var promise = $http.post(urlStates, data, config);
+		promise.success(function(data) {  
+			console.log("SUCCESS");
+			console.log(data);
+			callback(data);
+			console.log("SUCCESS");
+		});
+		promise.error(function(response, status) {  
+			console.log("ERROR");
+			console.log("The request failed with response " + response + " and status code " + status);
+			console.log("ERROR");
+		});
+		
+		
 	};
   
 	this.getStates = function(callback) {

@@ -2,7 +2,7 @@
 print_r(json_encode(
 	array(
 		array(
-			"name" => "Alagoas",
+			"name" => "Alagoas: " . $_POST["my_site"],
 			"capital" => "Maceió",
 			"renda" => 2043
 		),

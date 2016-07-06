@@ -4,14 +4,14 @@ app.controller('baseController', function($scope, $routeParams, $location, state
 	/*
 		Dynamic data = PHP data
 	*/
-	//statesService.getStatesHttp(function(data){
-		//$scope.states = data;
-	//});
+	statesService.getStatesHttp(function(data){
+		$scope.states = data;
+	});
 	
 	/*
 		Fixed Data
 	*/
-	$scope.states = statesService.getStates();
+	//$scope.states = statesService.getStates();
   
 	if( $routeParams.id != null ){
 		$scope._id = $routeParams.id;
