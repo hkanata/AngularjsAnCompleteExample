@@ -4,7 +4,10 @@ app.service('statesService', function($http) {
 	
 	// privado
 	var states = [
-		{"name": "Minas Gerais", "capital": "Belo Horizonte", "renda": 2000}
+		{"name": "Minas Gerais", "capital": "Belo Horizonte", "renda": 2000},
+		{"name": "Sao Paulo", "capital": "Betim", "renda": 2000},
+		{"name": "Rio de Janeiro", "capital": "Rio de Janeiro", "renda": 2000},
+		{"name": "Fortaleza", "capital": "Belem", "renda": 2000}
 	];
   
 	// público

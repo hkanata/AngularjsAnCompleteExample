@@ -1,8 +1,6 @@
-app.controller('baseController', function($scope, $location, statesService) {
+app.controller('baseController', function($scope, $routeParams, $location, statesService) {
 
 	$scope.filtro = "";
-
-	
 	/*
 		Dynamic data = PHP data
 	*/
@@ -14,6 +12,10 @@ app.controller('baseController', function($scope, $location, statesService) {
 		Fixed Data
 	*/
 	$scope.states = statesService.getStates();
+  
+	if( $routeParams.id != null ){
+		$scope._id = $routeParams.id;
+	}
   
 	$scope.today = statesService.getToday();
 	$scope.letras = statesService.getLetters();
@@ -29,4 +31,15 @@ app.controller('baseController', function($scope, $location, statesService) {
 		$scope.capital = '';
 		$location.path('#initial');
 	};
+});
+
+app.filter('meuFiltro', function() {
+    return function(data, input, t1, t2) {
+		
+		console.log(input);
+		console.log(t1);
+		console.log(t2);
+		
+        return data;
+    };
 });
